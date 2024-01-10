@@ -68,48 +68,27 @@ function findInvalidCards(arr) {
     for (let i = 0; i < largo; i++) {
         let takeArr = arr[i];
         let takeAns = validateCred(arr[i]);
-        if(takeAns === false) {
-            result.push(takeArr)
+        // if(takeAns === false) {
+        //     result.push(takeArr)
+        // }
+
+
+        // HERE IS THE EVIDENCE OF THE PROBLEM !!!!!!!!!!!!
+        console.log(takeAns);
+        if (i < 5) {
+            console.log('This is part of the TRUE section, index of: ' + i)
+        } else if (i < 10) {
+            console.log('This is part of the FALSE section, index of: ' + i)
+        } else {
+            console.log('This is part of the MYSTERY section, index of: ' + i)
         }
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
-    return result;
+    // return result;
 }
 
-function idInvalidCardCompanies(arr) {
-    let companies = [];
-    let largo = arr.length;
-    for (let i = 0; i < largo; i++) {
-        let initial = arr[i][0];
-        let nameComp
-        switch (initial) {
-            case 3:
-                nameComp = 'Amex';
-                break;
-            case 4:
-                nameComp = 'Visa';
-                break;
-            case 5:
-                nameComp = 'Mastercard';
-                break;
-            case 6:
-                nameComp = 'Discover';
-                break;
-            default:
-                nameComp = 'Company not found';
-                break;
-        };
-        if (companies.includes(nameComp) === false) {
-            companies.push(nameComp);
-        }
-    };
-    return companies
-}
-
-let invalidArr = findInvalidCards(batch)
-
-// console.log(validateCred(mystery5));
+// console.log(validateCred(invalid4));
 console.log(findInvalidCards(batch))
-console.log(idInvalidCardCompanies(invalidArr))
 
 
 

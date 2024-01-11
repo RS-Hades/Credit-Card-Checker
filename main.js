@@ -24,8 +24,6 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-let firstArr = [];
-let secondArr = [];
 function sumOfNums (arr) {
     let sum = arr.reduce((total, number) => {
         return total + number
@@ -35,6 +33,8 @@ function sumOfNums (arr) {
 
 function validateCred(arr) {
     let largo = arr.length - 1;
+    let firstArr = [];
+    let secondArr = [];
 
     for (let i = largo; i >= 0; i -= 2) {
         let check = arr[i];
@@ -87,7 +87,7 @@ function findInvalidCards(arr) {
     // return result;
 }
 
-// console.log(validateCred(invalid4));
+// console.log(validateCred(mystery4));
 console.log(findInvalidCards(batch))
 
 
